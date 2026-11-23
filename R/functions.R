@@ -4,6 +4,8 @@
 #'  startsWith was added in R 3.3.0 so should not work before then.
 #'
 #' @return boolean.
+#' @param x x
+#' @param prefix prefix
 #'
 #' @examples
 #' starts_with("bob", "b")

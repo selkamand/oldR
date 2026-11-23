@@ -6,6 +6,11 @@
 \usage{
 starts_with(x, prefix)
 }
+\arguments{
+\item{x}{x}
+
+\item{prefix}{prefix}
+}
 \value{
 boolean.
 }
