@@ -9,7 +9,6 @@ Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 8.0.0
 Suggests: 
-    testthat (>= 3.0.0)
-Config/testthat/edition: 3
+    testthat
 URL: https://github.com/selkamand/oldR
 BugReports: https://github.com/selkamand/oldR/issues
