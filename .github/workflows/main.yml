@@ -12,6 +12,10 @@ jobs:
       fail-fast: false
       matrix:
         r-version: ["4.0", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6"]
+        include:
+          # testthat >= 3.3.0 requires R >= 4.1.
+          - r-version: "4.0"
+            testthat: testthat@3.2.3
 
     name: R ${{ matrix.r-version }}
     steps:
@@ -23,7 +27,9 @@ jobs:
 
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck testthat@3.2.3
+          extra-packages: any::rcmdcheck ${{ matrix.testthat || 'any::testthat' }}
+          # Install testthat explicitly, without its optional dependencies (e.g. S7).
+          dependencies: '"hard"'
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
